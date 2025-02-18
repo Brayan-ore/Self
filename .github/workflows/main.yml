@@ -1,8 +1,8 @@
-name: Consume GitHub API
+name: Chiste de Chuck Norris
 
 on:
   schedule:
-    - cron: '0 * * * *' # Ejecutar cada hora
+    - cron: '0 * * * *'  # Ejecutar cada hora
 
 jobs:
   build:
@@ -15,17 +15,13 @@ jobs:
           python-version: '3.x'
       - name: Install dependencies
         run: pip install -r requirements.txt
-      - name: Get repositories
+      - name: Get Chuck Norris joke
         run: |
-          python -c "import requests"; 
-          org = 'Brayan-ore'; 
-          url = f'https://api.github.com/orgs/{org}/repos'; 
-          token = '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'; 
-          headers = {'Authorization': f'token {token}'}; 
-          response = requests.get(url, headers=headers); 
+          python -c "import requests
+          url = 'https://api.chucknorris.io/jokes/random'
+          response = requests.get(url)
           if response.status_code == 200:
-              repos = response.json(); 
-              for repo in repos:
-                  print(repo['name']); 
+              data = response.json()
+              print(data['value'])
           else:
-              print('Error al obtener los repositorios')" 
+              print('Error al obtener el chiste')"
