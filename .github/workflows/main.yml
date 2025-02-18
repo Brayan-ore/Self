@@ -17,7 +17,7 @@ jobs:
         run: pip install -r requirements.txt
       - name: Get repositories
         run: |
-          python -c "import requests; 
+          python -c "import requests"; 
           org = 'Brayan-ore'; 
           url = f'https://api.github.com/orgs/{org}/repos'; 
           token = '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'; 
