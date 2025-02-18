@@ -19,10 +19,9 @@ jobs:
         run: |
           import requests
 
-          # Reemplaza 'your-org' con el nombre de la organización
-          org = 'your-org'
+          org = 'Brayan-ore'
           url = f'https://api.github.com/orgs/{org}/repos'
-          token = 'your-token' # Reemplaza con tu token de acceso personal de GitHub
+          token = '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'
 
           headers = {
               "Authorization": f"token {token}"
