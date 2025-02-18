@@ -1,9 +1,7 @@
 name: Chiste de Chuck Norris
-
 on:
   schedule:
     - cron: '0 * * * *'  # Ejecutar cada hora
-
 jobs:
   build:
     runs-on: ubuntu-latest
