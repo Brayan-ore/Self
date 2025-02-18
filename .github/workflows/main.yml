@@ -17,11 +17,4 @@ jobs:
         run: pip install -r requirements.txt
       - name: Get Chuck Norris joke
         run: |
-          python -c "import requests
-          url = 'https://api.chucknorris.io/jokes/random'
-          response = requests.get(url)
-          if response.status_code == 200:
-              data = response.json()
-              print(data['value'])
-          else:
-              print('Error al obtener el chiste')"
+          python -c "import requests; url = 'https://api.chucknorris.io/jokes/random'; response = requests.get(url); if response.status_code == 200: data = response.json(); print(data['value']); else: print('Error al obtener el chiste')"
